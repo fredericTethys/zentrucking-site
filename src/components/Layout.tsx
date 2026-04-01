@@ -1,5 +1,4 @@
 import { Outlet, Link } from 'react-router-dom'
-import { Truck } from './Icons'
 
 export default function Layout() {
   return (
@@ -8,7 +7,7 @@ export default function Layout() {
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 text-gray-900 no-underline">
-            <Truck />
+            <img src="/logo.png" alt="Zen Trucking" className="w-8 h-8 rounded-full" />
             <span className="text-xl font-bold">Zen Trucking</span>
           </Link>
           <nav className="flex items-center gap-6 text-sm">
