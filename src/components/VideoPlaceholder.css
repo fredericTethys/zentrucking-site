@@ -1,0 +1,98 @@
+.videoslot { margin: 0; }
+
+.videoslot__frame {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(160deg, var(--navy) 0%, var(--primary) 100%);
+}
+.videoslot__frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.videoslot__ph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.videoslot__ph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(500px 200px at 30% 10%, rgba(20, 125, 204, 0.35), transparent 60%);
+}
+
+.videoslot__phone {
+  position: relative;
+  width: 116px;
+  height: 220px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
+  padding: 22px 14px;
+  z-index: 1;
+}
+.videoslot__notch {
+  position: absolute;
+  top: 9px; left: 50%; transform: translateX(-50%);
+  width: 34px; height: 5px; border-radius: 3px; background: var(--grey);
+}
+.videoslot__line { display: block; height: 8px; border-radius: 4px; background: var(--tint); margin: 10px 0; }
+.videoslot__line.short { width: 60%; }
+.videoslot__route {
+  display: block;
+  margin-top: 14px;
+  height: 92px;
+  border-radius: 10px;
+  background:
+    linear-gradient(120deg, rgba(16, 96, 157, 0.15), rgba(20, 125, 204, 0.28)),
+    var(--tint);
+  position: relative;
+}
+.videoslot__route::before {
+  content: "";
+  position: absolute;
+  left: 12px; right: 12px; top: 50%;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--bright) 0 8px, transparent 8px 14px);
+  transform: translateY(-50%) rotate(-8deg);
+}
+
+.videoslot__play {
+  position: absolute;
+  z-index: 2;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--bright);
+  color: #fff;
+  display: grid; place-items: center;
+  box-shadow: 0 10px 26px rgba(20, 125, 204, 0.55);
+  cursor: default;
+}
+
+.videoslot__badge {
+  position: absolute;
+  bottom: 12px; left: 12px;
+  z-index: 2;
+  background: rgba(4, 24, 40, 0.7);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.videoslot__cap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 14px;
+}
+.videoslot__cap strong { color: var(--navy); font-size: 1rem; }
+.videoslot__cap span { color: var(--muted); font-size: 0.9rem; }
