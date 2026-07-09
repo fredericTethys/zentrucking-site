@@ -18,8 +18,8 @@ export default function Enterprise() {
             collaboration with Zenteck engineering.
           </p>
           <div className="hero__actions">
-            <a className="btn btn--primary" href="mailto:support@zentrucking.ai?subject=Embedding%20Zen%20Trucking">
-              Scope an integration
+            <a className="btn btn--primary" href="mailto:support@zentrucking.ai?subject=Request%20a%20preview%20of%20Zen%20Trucking%20offerings">
+              Request a preview
             </a>
             <a className="btn btn--on-navy" href="#modules">Browse modules</a>
           </div>
