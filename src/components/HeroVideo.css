@@ -1,0 +1,145 @@
+.herov {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  padding: clamp(72px, 12vw, 148px) 0 clamp(72px, 12vw, 136px);
+}
+
+/* Fallback brand gradient — always present behind the video */
+.herov__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(900px 480px at 78% -8%, rgba(20, 125, 204, 0.3), transparent 62%),
+    linear-gradient(165deg, #062841 0%, #0a3355 58%, #0b446f 130%);
+}
+
+.herov__video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+/* Scrim: heaviest under the copy, opening up over the footage.
+   Layers: directional wash + bottom lift + top lift. */
+.herov__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.herov--left .herov__scrim {
+  background:
+    linear-gradient(100deg, rgba(4, 24, 40, 0.94) 0%, rgba(5, 30, 50, 0.84) 32%, rgba(6, 40, 65, 0.48) 64%, rgba(6, 40, 65, 0.26) 100%),
+    linear-gradient(0deg, rgba(4, 24, 40, 0.72) 0%, transparent 44%),
+    linear-gradient(180deg, rgba(4, 24, 40, 0.5) 0%, transparent 26%);
+}
+
+/* Mirrored: dark on the right, where the copy now sits. The footage is bright
+   pavement on that side, so this wash runs heavier and falls off on a curve —
+   near-solid navy behind the text, clearing fast so the rig stays visible. */
+.herov--right .herov__scrim {
+  background:
+    linear-gradient(
+      260deg,
+      rgba(4, 24, 40, 0.96) 0%,
+      rgba(4, 25, 42, 0.92) 15%,
+      rgba(5, 30, 50, 0.83) 30%,
+      rgba(5, 34, 56, 0.72) 45%,
+      rgba(6, 40, 65, 0.57) 60%,
+      rgba(6, 40, 65, 0.33) 80%,
+      rgba(6, 40, 65, 0.06) 100%
+    ),
+    linear-gradient(0deg, rgba(4, 24, 40, 0.68) 0%, transparent 46%),
+    linear-gradient(180deg, rgba(4, 24, 40, 0.52) 0%, transparent 28%);
+}
+
+/* Subtle grid motif, anchored under the copy */
+.herov__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 46px 46px;
+  pointer-events: none;
+}
+.herov--left .herov__grid { mask-image: radial-gradient(760px 420px at 26% 24%, #000, transparent 78%); }
+.herov--right .herov__grid { mask-image: radial-gradient(760px 420px at 74% 24%, #000, transparent 78%); }
+
+.herov__inner {
+  position: relative;
+  z-index: 4;
+  display: flex;
+}
+.herov--left .herov__inner { justify-content: flex-start; }
+.herov--right .herov__inner { justify-content: flex-end; }
+
+/* Copy column: sits on one side, but text stays left-aligned inside it so long
+   lines and the stat row remain readable. */
+.herov__col {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* ---------- Contrast tuning over live footage ---------- */
+
+.herov .eyebrow {
+  color: #86c6f7;
+  text-shadow: 0 1px 10px rgba(2, 14, 24, 0.6);
+}
+
+.herov h1 {
+  color: #fff;
+  max-width: 17ch;
+  text-shadow: 0 2px 24px rgba(2, 14, 24, 0.6), 0 1px 3px rgba(2, 14, 24, 0.45);
+}
+
+.herov .hero__lead {
+  color: rgba(255, 255, 255, 0.93);
+  text-shadow: 0 1px 14px rgba(2, 14, 24, 0.65);
+  max-width: 58ch;
+}
+
+.herov .statrow__num {
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(2, 14, 24, 0.6);
+}
+.herov .statrow__lbl {
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 1px 10px rgba(2, 14, 24, 0.7);
+}
+
+/* Ghost button needs more presence over moving footage */
+.herov .btn--on-navy {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+}
+.herov .btn--on-navy:hover { background: rgba(255, 255, 255, 0.24); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .herov__inner { justify-content: flex-start; }
+  .herov__col { max-width: none; }
+  /* On narrow screens the copy fills the width — wash the whole frame evenly. */
+  .herov--right .herov__scrim,
+  .herov--left .herov__scrim {
+    background:
+      linear-gradient(180deg, rgba(4, 24, 40, 0.78) 0%, rgba(5, 30, 50, 0.86) 100%),
+      linear-gradient(0deg, rgba(4, 24, 40, 0.6) 0%, transparent 50%);
+  }
+  .herov--right .herov__grid,
+  .herov--left .herov__grid { mask-image: radial-gradient(700px 420px at 50% 30%, #000, transparent 80%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .herov__video { display: none; }
+}
