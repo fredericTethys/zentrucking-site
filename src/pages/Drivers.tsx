@@ -121,7 +121,8 @@ export default function Drivers() {
               {
                 title: 'Your assigned load',
                 src: '/media/driver-assigned-load.mp4',
-                caption: 'The load assigned to you — details ready to review and accept.',
+                caption:
+                  'An overview of how assigned-load information is presented in the app — every operational detail at the driver’s fingertips.',
               },
             ]}
             comingSoon={{
