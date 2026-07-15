@@ -11,6 +11,13 @@
 }
 .videoslot__frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+/* Portrait (phone) demos — phone-shaped frame, capped and centered in its grid cell */
+.videoslot--portrait .videoslot__frame {
+  aspect-ratio: 9 / 16;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
 .videoslot__ph {
   position: absolute;
   inset: 0;

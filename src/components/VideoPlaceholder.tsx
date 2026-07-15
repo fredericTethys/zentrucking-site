@@ -7,6 +7,8 @@ type Props = {
   /** When you have a real file, pass src (e.g. "/media/driver-app-demo.mp4") and it renders a player. */
   src?: string
   poster?: string
+  /** Phone-shaped (9:16) frame for portrait app-screen recordings. */
+  portrait?: boolean
 }
 
 /**
@@ -14,9 +16,9 @@ type Props = {
  * a play affordance and caption — ready to drop in a real MP4 later. With a
  * `src`, it renders a native <video> player.
  */
-export default function VideoPlaceholder({ title, duration, caption, src, poster }: Props) {
+export default function VideoPlaceholder({ title, duration, caption, src, poster, portrait }: Props) {
   return (
-    <figure className="videoslot">
+    <figure className={`videoslot${portrait ? ' videoslot--portrait' : ''}`}>
       <div className="videoslot__frame">
         {src ? (
           <video controls poster={poster} preload="metadata">

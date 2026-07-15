@@ -1,4 +1,4 @@
-import VideoPlaceholder from '../components/VideoPlaceholder'
+import DemoCarousel from '../components/DemoCarousel'
 import JourneyCalculator from '../components/JourneyCalculator'
 import { Check, Dollar, Clock, Phone, Route, Truck } from '../components/icons'
 import './pages.css'
@@ -106,23 +106,24 @@ export default function Drivers() {
             </p>
           </div>
 
-          <div className="demo-grid">
-            <VideoPlaceholder
-              title="Accepting your best load"
-              duration="0:50"
-              caption="From the ranked list to an accepted journey in a few taps."
-            />
-            <VideoPlaceholder
-              title="The AI voice agent, calling a broker"
-              duration="1:05"
-              caption="Hear the agent confirm rate, contact and appointment windows."
-            />
-            <VideoPlaceholder
-              title="Your HOS-aware journey"
-              duration="0:45"
-              caption="Breaks and reset placed automatically; an ETA you can trust."
-            />
-          </div>
+          <DemoCarousel
+            items={[
+              {
+                title: 'Intro & home screen',
+                src: '/media/driver-intro-home.mp4',
+                caption: 'A quick tour of the driver app, starting on the home screen.',
+              },
+              {
+                title: 'The button bar & settings',
+                src: '/media/driver-button-bar-settings.mp4',
+                caption: 'Getting around the app and setting it up your way.',
+              },
+            ]}
+            comingSoon={{
+              title: 'More walkthroughs coming soon',
+              caption: 'Accepting a load, the AI voice agent, and HOS-aware journeys — recorded next.',
+            }}
+          />
         </div>
       </section>
 
