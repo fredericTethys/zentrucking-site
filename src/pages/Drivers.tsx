@@ -118,10 +118,15 @@ export default function Drivers() {
                 src: '/media/driver-button-bar-settings.mp4',
                 caption: 'Getting around the app and setting it up your way.',
               },
+              {
+                title: 'Your assigned load',
+                src: '/media/driver-assigned-load.mp4',
+                caption: 'The load assigned to you — details ready to review and accept.',
+              },
             ]}
             comingSoon={{
               title: 'More walkthroughs coming soon',
-              caption: 'Accepting a load, the AI voice agent, and HOS-aware journeys — recorded next.',
+              caption: 'The AI voice agent and HOS-aware journeys — recorded next.',
             }}
           />
         </div>
