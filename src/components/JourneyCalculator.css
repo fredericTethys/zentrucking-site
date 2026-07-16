@@ -26,6 +26,7 @@
   background: var(--warn);
   padding: 4px 10px;
   border-radius: 999px;
+  white-space: nowrap;
 }
 .jc__preview p {
   margin: 0;

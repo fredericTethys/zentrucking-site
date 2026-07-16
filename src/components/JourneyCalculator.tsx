@@ -49,12 +49,12 @@ export default function JourneyCalculator() {
     <div className="jc">
       {!isApiConfigured() && (
         <div className="jc__preview" role="note">
-          <span className="jc__preview-tag">Preview</span>
+          <span className="jc__preview-tag">Coming soon</span>
           <p>
-            <strong>This planner is illustrative for now.</strong> It returns a sample estimate to
-            show how journey planning works — the numbers aren&apos;t a real route yet. Live routing,
-            real mileage and ELD-based hours-of-service go live shortly, once it&apos;s connected to
-            the Zen Trucking backend.
+            <strong>The journey planner is coming soon.</strong> It will calculate a specific journey
+            from the origin, destination and hours-of-service clocks you enter — laying out every
+            stop, break and 10-hour reset needed for compliance, just like the Journey management
+            demo above.
           </p>
         </div>
       )}
@@ -109,12 +109,14 @@ export default function JourneyCalculator() {
         </div>
 
         <div className="jc__actions">
-          <button className="btn btn--primary" type="submit" disabled={loading}>
-            {loading ? 'Planning…' : 'Plan my journey'}
+          <button
+            className="btn btn--primary"
+            type="submit"
+            disabled={loading || !isApiConfigured()}
+          >
+            {!isApiConfigured() ? 'Available soon' : loading ? 'Planning…' : 'Plan my journey'}
           </button>
-          <span className={`jc__mode ${isApiConfigured() ? 'is-live' : ''}`}>
-            {isApiConfigured() ? '● Live planner connected' : '○ Illustrative estimate (connect backend for live routing)'}
-          </span>
+          {isApiConfigured() && <span className="jc__mode is-live">● Live planner connected</span>}
         </div>
       </form>
 
