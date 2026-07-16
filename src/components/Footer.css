@@ -8,15 +8,19 @@
 
 .site-footer__cta {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 30px;
-  align-items: center;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 44px;
+  align-items: start;
   padding-bottom: 46px;
   margin-bottom: 44px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
+.site-footer__cta-copy { padding-top: 6px; }
 .site-footer__cta h2 { color: #fff; margin-bottom: 12px; }
 .site-footer__cta .lead { color: rgba(255, 255, 255, 0.8); }
+.site-footer__cta-alt { margin-top: 18px; font-size: 0.92rem; color: rgba(255, 255, 255, 0.7); }
+.site-footer__cta-alt a { color: var(--bright); }
+.site-footer__cta-alt a:hover { color: #fff; }
 .site-footer__cta-actions {
   display: flex;
   flex-direction: column;

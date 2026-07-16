@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import ContactForm from './ContactForm'
 import './Footer.css'
 
 export default function Footer() {
@@ -6,21 +7,20 @@ export default function Footer() {
     <footer className="site-footer" id="contact">
       <div className="container">
         <div className="site-footer__cta">
-          <div>
+          <div className="site-footer__cta-copy">
             <span className="eyebrow">Get started</span>
-            <h2>See what an automated back office does for your trucks.</h2>
+            <h2>Tell us about your operation.</h2>
             <p className="lead">
-              Book a 20-minute walkthrough. We&apos;ll show the dispatcher console, the driver app,
-              and the AI voice agent booking a real load.
+              Whether you drive, run a fleet, or want to embed Zen capabilities in your own stack —
+              tell us who you are and what you&apos;re after, and we&apos;ll be in touch to set up a
+              walkthrough.
+            </p>
+            <p className="site-footer__cta-alt">
+              Prefer email? <a href="mailto:support@zentrucking.ai">support@zentrucking.ai</a>
             </p>
           </div>
-          <div className="site-footer__cta-actions">
-            <a className="btn btn--primary" href="mailto:support@zentrucking.ai?subject=Zen%20Trucking%20demo">
-              Book a demo
-            </a>
-            <a className="btn btn--on-navy" href="mailto:support@zentrucking.ai">
-              support@zentrucking.ai
-            </a>
+          <div className="site-footer__cta-form">
+            <ContactForm />
           </div>
         </div>
 

@@ -28,7 +28,7 @@ export default function Home() {
           <a className="btn btn--primary" href="#choose">
             Find your path <Arrow />
           </a>
-          <a className="btn btn--on-navy" href="mailto:support@zentrucking.ai?subject=Zen%20Trucking%20demo">
+          <a className="btn btn--on-navy" href="#contact">
             Book a demo
           </a>
         </div>
