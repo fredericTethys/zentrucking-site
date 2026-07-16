@@ -124,10 +124,16 @@ export default function Drivers() {
                 caption:
                   'An overview of how assigned-load information is presented in the app — every operational detail at the driver’s fingertips.',
               },
+              {
+                title: 'Journey management',
+                src: '/media/driver-journey-management.mp4',
+                caption:
+                  'The heart of the app: every stop, break and 10-hour reset planned for hours-of-service compliance — with the right truck stop pinpointed for each break along the way.',
+              },
             ]}
             comingSoon={{
               title: 'More walkthroughs coming soon',
-              caption: 'The AI voice agent and HOS-aware journeys — recorded next.',
+              caption: 'The AI voice agent and more — recorded next.',
             }}
           />
         </div>
