@@ -47,6 +47,18 @@ export default function JourneyCalculator() {
 
   return (
     <div className="jc">
+      {!isApiConfigured() && (
+        <div className="jc__preview" role="note">
+          <span className="jc__preview-tag">Preview</span>
+          <p>
+            <strong>This planner is illustrative for now.</strong> It returns a sample estimate to
+            show how journey planning works — the numbers aren&apos;t a real route yet. Live routing,
+            real mileage and ELD-based hours-of-service go live shortly, once it&apos;s connected to
+            the Zen Trucking backend.
+          </p>
+        </div>
+      )}
+
       <form className="jc__form" onSubmit={onSubmit}>
         <div className="jc__row">
           <label className="jc__field">
